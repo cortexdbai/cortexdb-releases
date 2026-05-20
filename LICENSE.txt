@@ -1,0 +1,38 @@
+CortexDB Community License v1.0
+================================
+
+Copyright (c) 2026 CortexDB
+
+Permission is granted to any individual or organization to download, install,
+operate, and modify the CortexDB binary distribution ("the Software") in their
+own infrastructure, free of charge, subject to the conditions below.
+
+1. The Software is provided "AS IS", without warranty of any kind, express or
+   implied. CortexDB and its contributors are not liable for damages arising
+   from use of the Software.
+
+2. The Software may be used to power internal or commercial applications,
+   including those sold to third parties, provided that:
+   (a) the third party does not access the Software directly as a
+       general-purpose memory database (i.e., you may build products on top
+       of CortexDB and sell those products; you may not resell CortexDB
+       itself as a service); and
+   (b) attribution to "CortexDB" appears in product documentation where
+       reasonable.
+
+3. Redistribution of the Software in its original binary form is permitted
+   only via official CortexDB distribution channels (cortexdb.ai/download,
+   Docker Hub `cortexdb/cortexdb`, GitHub Releases on the cortexdb
+   organization). Mirroring on internal artifact stores for the
+   licensee's own use is permitted.
+
+4. Reverse engineering, decompilation, or disassembly of the Software is
+   prohibited except where local law permits such activity notwithstanding
+   this restriction.
+
+5. Source code is not distributed with this release. For enterprise support,
+   custom deployment, source-access agreements, or cloud-hosted offerings,
+   contact sales@cortexdb.ai.
+
+This license will be replaced in a future release with a formal open-source
+or source-available license. Until then, the terms above govern use.
