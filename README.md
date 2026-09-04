@@ -7,11 +7,29 @@ The CortexDB source code is closed. Only prebuilt artifacts live here.
 
 ## Download
 
-The fastest way to get CortexDB is the **Docker image** on Docker Hub:
+The fastest way to get CortexDB is the **Docker image** on Docker Hub. The
+published image uses OpenAI embeddings by default, so configure an embedding
+credential and a strong, stable CortexDB bearer before starting it:
 
 ```bash
-docker run -p 3141:3141 -v cortexdb_data:/data cortexdb/cortexdb
+export OPENAI_API_KEY="..."
+export CORTEX_API_KEY="$(openssl rand -hex 32)"
+
+docker run -d \
+  --name cortexdb \
+  -p 127.0.0.1:3141:3141 \
+  -v cortexdb_data:/data \
+  -e OPENAI_API_KEY \
+  -e CORTEX_API_KEY \
+  cortexdb/cortexdb:latest
 ```
+
+The loopback bind keeps the service local to the host. Data and administrative
+operations require `Authorization: Bearer <token>` using the configured
+`CORTEX_API_KEY`; liveness and readiness probes remain public. The image fails
+closed when its configured remote embedding provider lacks a usable key. See
+the [deployment documentation](https://cortexdb.ai/docs) before exposing the
+service beyond localhost or selecting another embedding provider.
 
 For Linux binary installs, grab a tarball from the
 [Releases](https://github.com/cortexdbai/cortexdb-releases/releases) tab:
@@ -31,10 +49,11 @@ prioritize platform support.
 
 ## Verify checksums
 
-Every release includes a `SHA256SUMS.txt` file. Verify your download with:
+Each archive has an adjacent `.sha256` file. Download both files into the same
+directory, then verify the archive (use `arm64` instead for that platform):
 
 ```bash
-sha256sum -c SHA256SUMS.txt
+sha256sum -c ./cortexdb-*-linux-amd64.tar.gz.sha256
 ```
 
 ## Quickstart
@@ -42,7 +61,8 @@ sha256sum -c SHA256SUMS.txt
 After pulling the Docker image (or extracting the tarball and running
 `./cortexdb`), open <http://localhost:3141> in a browser. The built-in admin
 UI gives you a one-page view of what's stored, plus forms to add and recall
-memories. Bundled docs live at <http://localhost:3141/docs>.
+memories; enter the same CortexDB bearer when prompted. Bundled docs live at
+<http://localhost:3141/docs>.
 
 For the API surface and configuration env vars, see the
 [Getting Started](https://cortexdb.ai/docs) page on the website.
@@ -51,8 +71,9 @@ For the API surface and configuration env vars, see the
 
 Use of these binaries is governed by the
 [CortexDB Community License v1.0](./LICENSE.txt) — free for personal,
-internal-business, evaluation, and development use. The only thing not
-permitted is reselling CortexDB as a hosted service to third parties.
+internal-business, evaluation, and development use, subject to its full terms.
+Those terms also cover hosted-service resale, attribution, redistribution
+channels, and reverse engineering; the linked license is authoritative.
 
 ## Support
 

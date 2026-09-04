@@ -22,8 +22,9 @@ own infrastructure, free of charge, subject to the conditions below.
 
 3. Redistribution of the Software in its original binary form is permitted
    only via official CortexDB distribution channels (cortexdb.ai/download,
-   Docker Hub `cortexdb/cortexdb`, GitHub Releases on the cortexdb
-   organization). Mirroring on internal artifact stores for the
+   Docker Hub `cortexdb/cortexdb`, GitHub Releases at
+   `github.com/cortexdbai/cortexdb-releases`). Mirroring on internal artifact
+   stores for the
    licensee's own use is permitted.
 
 4. Reverse engineering, decompilation, or disassembly of the Software is
