@@ -69,11 +69,8 @@ For the API surface and configuration env vars, see the
 
 ## License
 
-Use of these binaries is governed by the
-[CortexDB Community License v1.0](./LICENSE.txt) — free for personal,
-internal-business, evaluation, and development use, subject to its full terms.
-Those terms also cover hosted-service resale, attribution, redistribution
-channels, and reverse engineering; the linked license is authoritative.
+CortexDB server binaries and official client packages are licensed under the
+[Apache License 2.0](./LICENSE.txt).
 
 ## Support
 
