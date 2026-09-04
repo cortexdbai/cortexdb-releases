@@ -31,13 +31,16 @@ closed when its configured remote embedding provider lacks a usable key. See
 the [deployment documentation](https://cortexdb.ai/docs) before exposing the
 service beyond localhost or selecting another embedding provider.
 
-For Linux binary installs, grab a tarball from the
-[Releases](https://github.com/cortexdbai/cortexdb-releases/releases) tab:
+For a v0.9.10 binary install, grab a tarball from the
+[Releases](https://github.com/cortexdbai/cortexdb-releases/releases) tab. These
+tarballs require an Ubuntu 24.04-class userspace: glibc 2.39 and OpenSSL 3.
+Use the Docker image when the host does not meet that runtime floor; the image
+carries its required userspace.
 
-| Platform     | Asset                                        |
-| ------------ | -------------------------------------------- |
-| Linux x86_64 | `cortexdb-<version>-linux-amd64.tar.gz`      |
-| Linux ARM64  | `cortexdb-<version>-linux-arm64.tar.gz`      |
+| Architecture | Required userspace                         | Asset                                   |
+| ------------ | ------------------------------------------ | --------------------------------------- |
+| x86_64       | Ubuntu 24.04-class (glibc 2.39, OpenSSL 3) | `cortexdb-<version>-linux-amd64.tar.gz` |
+| ARM64        | Ubuntu 24.04-class (glibc 2.39, OpenSSL 3) | `cortexdb-<version>-linux-arm64.tar.gz` |
 
 Each tarball contains the `cortexdb` binary, the WordNet asset bundle,
 bundled docs (Getting Started, API Reference, Production Deployment),
