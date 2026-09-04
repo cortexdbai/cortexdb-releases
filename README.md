@@ -69,8 +69,9 @@ For the API surface and configuration env vars, see the
 
 ## License
 
-CortexDB server binaries and official client packages are licensed under the
-[Apache License 2.0](./LICENSE.txt).
+CortexDB v0.9.10 server binaries and its coordinated official client packages
+are licensed under the [Apache License 2.0](./LICENSE.txt). Each release archive
+includes the license that governs that version.
 
 ## Support
 
